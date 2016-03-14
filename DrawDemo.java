@@ -23,6 +23,22 @@ public class DrawDemo
         myCanvas.erase();
         random = new Random();
     }
+    /**
+     * permite dibujar un triangulo verde en las coordenadas enteras x e y pasadas como parámetro.
+     */
+     public void drawTriangle(int x , int y)
+     {
+        Pen pen = new Pen (x, y, myCanvas);
+         pen.setColor(Color.GREEN);
+         for (int i=0 ; i < 3 ; i++)
+         {
+            pen.move(150);
+            pen.turn(-120);
+            
+         }
+
+     }
+    
 
     /**
      * Draw a square on the screen.
