@@ -23,38 +23,50 @@ public class DrawDemo
         myCanvas.erase();
         random = new Random();
     }
+
     /**
      * permite dibujar un triangulo verde en las coordenadas enteras x e y pasadas como parámetro.
      */
-     public void drawTriangle(int x , int y)
-     {
+    public void drawTriangle(int x , int y)
+    {
         Pen pen = new Pen (x, y, myCanvas);
-         pen.setColor(Color.GREEN);
-         for (int i=0 ; i < 3 ; i++)
-         {
+        pen.setColor(Color.GREEN);
+        for (int i=0 ; i < 3 ; i++)
+        {
             pen.move(150);
             pen.turn(-120);
-            
-         }
 
-     }
-     /**
-      *  permite dibujar un pentágono verde.
-      */
-     public void drawPentagon()
-     {
-         Pen pen = new Pen(320, 260, myCanvas);
-         for (int i=0; i<5 ; i++)
-         {
-             pen.move(100);
-             pen.turn(-72);
-         }
-         
-        
-     }
-     
-     
-    
+        }
+
+    }
+
+    /**
+     *  permite dibujar un pentágono verde.
+     */
+    public void drawPentagon()
+    {
+        Pen pen = new Pen(320, 260, myCanvas);
+        for (int i=0; i<5 ; i++)
+        {
+            pen.move(100);
+            pen.turn(-72);
+        }
+
+    }
+    /**
+     * permit dibujar un polígono regular con n lados, es decir, si n vale 3, será un triángulo, si vale 4 será un cuadrado, etc
+     */
+
+    public void drawPolygon(int n)
+    {
+        Pen pen = new Pen(320, 260, myCanvas);
+        for (int i=0; i<n ; i++)
+        {
+            pen.move(60);
+            pen.turn(-360/n);
+        }
+    }
+
 
     /**
      * Draw a square on the screen.
@@ -105,11 +117,11 @@ public class DrawDemo
             int green = random.nextInt(256);
             int blue = random.nextInt(256);
             pen.setColor(new Color(red, green, blue));
-            
+
             pen.randomSquiggle();
         }
     }
-    
+
     /**
      * Clear the screen.
      */
