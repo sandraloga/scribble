@@ -66,6 +66,20 @@ public class DrawDemo
             pen.turn(-360/n);
         }
     }
+    /**
+     * dibuj una espiral
+     */
+    public void drawSpiral()
+    {
+        Pen pen = new Pen(250, 200, myCanvas);
+        int numero=5;
+        for(int i = 1; i<200; i++)
+        {
+            numero= numero+2;
+            pen.move(numero);
+            pen.turn(-90);
+        }
+    }
 
 
     /**
